@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using CibertecWeb.Models;
+using Cibertec.Web.Models;
 
-namespace CibertecWeb.Controllers
+namespace Cibertec.Web.Controllers
 {
     public class ProductController : Controller
     {

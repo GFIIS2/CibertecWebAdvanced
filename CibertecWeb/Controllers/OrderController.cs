@@ -7,19 +7,20 @@ using Cibertec.Web.Models;
 
 namespace Cibertec.Web.Controllers
 {
-    public class SupplierController : Controller
+    public class OrderController : Controller
     {
         private readonly NorthwinddbContext _db;
         //esta variable solo puede ser usada en el contructor y en ningun otro lado.
 
-        public SupplierController(NorthwinddbContext db)
+        public OrderController(NorthwinddbContext db)
         {
             _db = db;
         }
 
         public IActionResult Index()
         {
-            return View(_db.Suppliers);
+            return View(_db.Orders);
         }
+        
     }
 }

@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using CibertecWeb.Models;
+using Cibertec.Web.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CibertecWeb
+namespace Cibertec.Web
 {
     public class Startup
     {

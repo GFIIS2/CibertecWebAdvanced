@@ -1,4 +1,4 @@
-﻿namespace Cibertec.Web.Models
+﻿namespace Cibertec.Models
 {
     public class Customer
     {
