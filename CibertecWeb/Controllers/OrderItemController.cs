@@ -8,34 +8,33 @@ using Cibertec.UnitOfWork;
 
 namespace Cibertec.Web.Controllers
 {
-    public class ProductController : Controller
+    public class OrderItemController : Controller
     {
         //private readonly NorthwinddbContext _db;
         ////esta variable solo puede ser usada en el contructor y en ningun otro lado.
 
-        //public ProductController(NorthwinddbContext db)
+        //public OrderItemController(NorthwinddbContext db)
         //{
         //    _db = db;
         //}
 
-      
-
         //public IActionResult Index()
         //{
-        //    return View(_db.Products);
+        //    return View(_db.OrderItems);
         //}
 
         private readonly IUnitOfWork _db;
         //esta variable solo puede ser usada en el contructor y en ningun otro lado.
 
-        public ProductController(IUnitOfWork db)
+        public OrderItemController(IUnitOfWork db)
         {
             _db = db;
         }
 
         public IActionResult Index()
         {
-            return View(_db.Products.GetAll());
+            return View(_db.OrderItems.GetAll());
         }
+
     }
 }

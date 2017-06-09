@@ -8,6 +8,8 @@
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.2" />
+    <PackageReference Include="Dapper.Contrib" Version="1.50.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
@@ -24,6 +26,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Customer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cibertec.Models\Cibertec.Models.csproj" />
+    <ProjectReference Include="..\Cibertec.Repositories\Cibertec.Repositories.csproj" />
+    <ProjectReference Include="..\Cibertec.UnitOfWork\Cibertec.UnitOfWork.csproj" />
   </ItemGroup>
 
 </Project>
