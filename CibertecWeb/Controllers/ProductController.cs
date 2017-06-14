@@ -25,17 +25,17 @@ namespace Cibertec.Web.Controllers
         //    return View(_db.Products);
         //}
 
-        private readonly IUnitOfWork _db;
+        private readonly IUnitOfWork _unit;
         //esta variable solo puede ser usada en el contructor y en ningun otro lado.
 
-        public ProductController(IUnitOfWork db)
+        public ProductController(IUnitOfWork unit)
         {
-            _db = db;
+            _unit = unit;
         }
 
         public IActionResult Index()
         {
-            return View(_db.Products.GetAll());
+            return View(_unit.Products.GetAll());
         }
     }
 }

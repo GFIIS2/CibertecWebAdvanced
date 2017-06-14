@@ -18,14 +18,19 @@ namespace Cibertec.Web.Controllers
 
         //esta variable solo puede ser usada en el contructor y en ningun otro lado.
 
-        public CustomerController(IUnitOfWork db)
+        public CustomerController(IUnitOfWork unit)
         {
-            _unit = db;
+            _unit = unit;
         }
 
         public IActionResult Index()
         {
             return View(_unit.Customers.GetAll());
+        }
+        public IActionResult Detail()
+        {
+            _unit.Customers.SearchByNames("Maria","Anders");
+            return View();
         }
     }
 }

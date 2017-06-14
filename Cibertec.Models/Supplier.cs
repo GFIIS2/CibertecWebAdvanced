@@ -15,5 +15,7 @@ namespace Cibertec.Models
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
+
+        public virtual IEnumerable<Product> Products { get; set; }
     }
 }

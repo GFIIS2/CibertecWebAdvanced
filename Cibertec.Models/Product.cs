@@ -13,5 +13,8 @@ namespace Cibertec.Models
         public decimal UnitPrice { get; set; }
         public string Package { get; set; }
         public bool IsDiscontinued { get; set; }
+
+        public virtual Supplier Supplier { get; set; }
+        public virtual IEnumerable<OrderItem> OrderItems { get; set; }
     }
 }

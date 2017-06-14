@@ -8,5 +8,6 @@ namespace Cibertec.Repositories
         int Insert(T entity);
         bool Update(T entity);
         IEnumerable<T> GetAll();
+        T GetById(int id);
     }
 }

@@ -23,17 +23,17 @@ namespace Cibertec.Web.Controllers
         //    return View(_db.OrderItems);
         //}
 
-        private readonly IUnitOfWork _db;
+        private readonly IUnitOfWork _unit;
         //esta variable solo puede ser usada en el contructor y en ningun otro lado.
 
-        public OrderItemController(IUnitOfWork db)
+        public OrderItemController(IUnitOfWork unit)
         {
-            _db = db;
+            _unit = unit;
         }
 
         public IActionResult Index()
         {
-            return View(_db.OrderItems.GetAll());
+            return View(_unit.OrderItems.GetAll());
         }
 
     }

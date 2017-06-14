@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Cibertec.Repositories.Northwind.EntityFramework
 {
-    public class CustomerRepository : Repository<Customer>, ICustomerRepository
+    public class CustomerRepository : RepositoryEF<Customer>, ICustomerRepository
     {
         public CustomerRepository(DbContext dbContext) : base(dbContext)
         {

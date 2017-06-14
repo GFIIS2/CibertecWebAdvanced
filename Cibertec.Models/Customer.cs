@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Cibertec.Models
 {
@@ -16,5 +17,6 @@ namespace Cibertec.Models
         public string Country { get; set; }
         public string Phone { get; set; }
 
+        public virtual IEnumerable<Order> Orders { get; set; }
     }
 }

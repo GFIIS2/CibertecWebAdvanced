@@ -1,38 +1,50 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System;
 
 namespace Cibertec.Repositories
 {
     public class RepositoryEF<T> : IRepository<T> where T : class
     {
-        private readonly DbContext _context;
+        private const int SUCCESS_TRANSACTION = 1;
 
-        public RepositoryEF(DbContext db)
+        protected readonly DbContext _dbContext;
+
+        public RepositoryEF(DbContext dbContext)
         {
-            _context = db;
+            _dbContext = dbContext;
         }
 
         public bool Delete(T entity)
         {
-            _context.Remove(entity);
-            return _context.SaveChanges() > 0;
+            _dbContext.Remove(entity);
+
+            return _dbContext.SaveChanges() == SUCCESS_TRANSACTION;
         }
 
         public IEnumerable<T> GetAll()
-        {            
-            return _context.Set<T>();
+        {
+            return _dbContext.Set<T>();
+        }
+
+        public T GetById(int id)
+        {
+            return _dbContext.Set<T>().Find(id);
         }
 
         public int Insert(T entity)
         {
-            _context.Add(entity);
-            return _context.SaveChanges();
+            _dbContext.Add(entity);
+
+            return _dbContext.SaveChanges();
         }
 
         public bool Update(T entity)
         {
-            _context.Update(entity);
-            return _context.SaveChanges() > 0;
+            _dbContext.Update(entity);
+
+            return _dbContext.SaveChanges() == SUCCESS_TRANSACTION;
         }
+        
     }
 }
