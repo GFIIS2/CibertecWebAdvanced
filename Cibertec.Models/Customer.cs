@@ -1,4 +1,6 @@
-﻿namespace Cibertec.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Cibertec.Models
 {
     public class Customer
     {
@@ -6,6 +8,8 @@
         
         //public String MyProperty { get; set; } //es un objeto "String" por eso no es recomendable el uso.
 
+        [Display(Name = "First Name")]
+        [Required(ErrorMessage = "Debe introducir un nombre")]
         public string FirstName { get; set; } //es un clase natibo por eso es recomendable el uso.
         public string LastName { get; set; }
         public string City { get; set; }

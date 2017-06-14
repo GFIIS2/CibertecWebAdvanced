@@ -10,6 +10,9 @@ using Microsoft.Extensions.Logging;
 using Cibertec.Web.Models;
 using Microsoft.EntityFrameworkCore;
 using Cibertec.UnitOfWork;
+using NLog.Web;
+using Microsoft.AspNetCore.Http;
+using NLog.Extensions.Logging;
 
 namespace Cibertec.Web
 {
@@ -23,6 +26,10 @@ namespace Cibertec.Web
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+            //Tiene que ir despues del builder pues éste se encarga de configurar el entorno de ASP.NET core
+
+            //Agregar comentario para LOGS (Se coloca nombre del archivo para LOGS)
+            env.ConfigureNLog("NLogConfig.config");
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -50,6 +57,10 @@ namespace Cibertec.Web
             //);
 
             //CASO 3: USANDO DAPPER
+
+            //13-06: Agregar esta lista para que funcione el LOGGER
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             services.AddSingleton<IUnitOfWork>(options => new CibertecUnitOfWork(Configuration.GetConnectionString("Northwind")));
             
 
@@ -59,8 +70,12 @@ namespace Cibertec.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            //NOTA: 13-06 Se comenta el propio logger de ASP-NET, y se agrega del NLOGER
+            //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            //loggerFactory.AddDebug();
+
+            loggerFactory.AddNLog();
+            app.AddNLogWeb();
 
             if (env.IsDevelopment())
             {

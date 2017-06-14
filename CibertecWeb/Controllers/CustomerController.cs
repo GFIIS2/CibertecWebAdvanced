@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Cibertec.Web.Models;
 using Cibertec.UnitOfWork;
+using Cibertec.Web.Filter;
 
 namespace Cibertec.Web.Controllers
 {
+    [ExceptionLoggerFilter]
     public class CustomerController : Controller
     {
         private readonly IUnitOfWork _unit;
