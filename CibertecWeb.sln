@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Web", "CibertecWeb\Cibertec.Web.csproj", "{7BFC5512-A41C-45A3-9838-DA83406D7642}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Web", "CibertecWeb\Cibertec.Web.csproj", "{7BFC5512-A41C-45A3-9838-DA83406D7642}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{AD5096CC-0D2E-4E4A-85C1-A8636E930485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Models", "Cibertec.Models\Cibertec.Models.csproj", "{EED846A4-161F-4069-B709-5AE52FC09822}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Models", "Cibertec.Models\Cibertec.Models.csproj", "{EED846A4-161F-4069-B709-5AE52FC09822}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Repositories", "Cibertec.Repositories\Cibertec.Repositories.csproj", "{DE9A26DD-1C71-4184-92C0-6DE601AF77A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories", "Cibertec.Repositories\Cibertec.Repositories.csproj", "{DE9A26DD-1C71-4184-92C0-6DE601AF77A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.UnitOfWork", "Cibertec.UnitOfWork\Cibertec.UnitOfWork.csproj", "{43CFCD87-6177-4FA7-9213-0034FF7D36F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.UnitOfWork", "Cibertec.UnitOfWork\Cibertec.UnitOfWork.csproj", "{43CFCD87-6177-4FA7-9213-0034FF7D36F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FEB54663-ED4C-464A-839F-5C88A441E90E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories.Tests", "Cibertec.Repositories.Tests\Cibertec.Repositories.Tests.csproj", "{C92FD7B5-3D8F-4508-8132-D84C32093CCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,10 @@ Global
 		{43CFCD87-6177-4FA7-9213-0034FF7D36F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43CFCD87-6177-4FA7-9213-0034FF7D36F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43CFCD87-6177-4FA7-9213-0034FF7D36F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C92FD7B5-3D8F-4508-8132-D84C32093CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92FD7B5-3D8F-4508-8132-D84C32093CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C92FD7B5-3D8F-4508-8132-D84C32093CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C92FD7B5-3D8F-4508-8132-D84C32093CCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +51,6 @@ Global
 		{EED846A4-161F-4069-B709-5AE52FC09822} = {AD5096CC-0D2E-4E4A-85C1-A8636E930485}
 		{DE9A26DD-1C71-4184-92C0-6DE601AF77A2} = {AD5096CC-0D2E-4E4A-85C1-A8636E930485}
 		{43CFCD87-6177-4FA7-9213-0034FF7D36F6} = {AD5096CC-0D2E-4E4A-85C1-A8636E930485}
+		{C92FD7B5-3D8F-4508-8132-D84C32093CCA} = {FEB54663-ED4C-464A-839F-5C88A441E90E}
 	EndGlobalSection
 EndGlobal
