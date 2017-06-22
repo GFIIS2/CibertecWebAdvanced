@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Dapper.Contrib.Extensions;
-using System.Data.SqlClient;
+﻿using Dapper.Contrib.Extensions;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace Cibertec.Repositories
 {

@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Cibertec.Web.Models;
 using Cibertec.UnitOfWork;
 
 namespace Cibertec.Web.Controllers

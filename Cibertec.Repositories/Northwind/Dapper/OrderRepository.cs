@@ -4,20 +4,20 @@ using System.Data.SqlClient;
 
 namespace Cibertec.Repositories.Northwind.Dapper
 {
-    public class ProductRepository : RepositoryDapper<Product>, IProductRepository
+    public class OrderRepository : RepositoryDapper<Order>, IOrderRepository
     {
-        public ProductRepository(string connectionString) : base(connectionString)
+        public OrderRepository(string connectionString) : base(connectionString)
         {
         }
-        
-        public Product SearchByNames(string productName)
+
+        public Order SearchByOrderNumber(int orderNumber)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 var parameters = new DynamicParameters();
-                parameters.Add("@productName", productName);
-                
-                return connection.QueryFirst<Product>("dbo.Prod_SearchByNames",
+                parameters.Add("@orderNumber", orderNumber);
+
+                return connection.QueryFirst<Order>("dbo.Orde_SearchByOrderNumber",
                     parameters,
                     commandType: System.Data.CommandType.StoredProcedure);
             }

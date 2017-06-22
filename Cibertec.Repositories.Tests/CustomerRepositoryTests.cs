@@ -1,5 +1,6 @@
 ﻿using Cibertec.Models;
 using Cibertec.UnitOfWork;
+using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace Cibertec.Repositories.Tests
 
             //Forma 2
             result.Should().NotBeNull();
-            result.Count().Should().BeGraterThan(0);
+            result.Count().Should().BeGreaterThan(0);
         }
 
         [Fact(DisplayName = "[CustomerRepositoryTests] Get By Id")]
@@ -44,8 +45,8 @@ namespace Cibertec.Repositories.Tests
             Assert.NotNull(result);
             Assert.True(result.Id > 0);
 
-            //forma 2
-            result.Count().Should().BeGraterThan(0);
+            //forma 2            
+            //result.Should().BeGreaterThan(0);
         }
 
         [Fact(DisplayName = "[CustomerRepositoryTests] Insert")]
@@ -56,7 +57,7 @@ namespace Cibertec.Repositories.Tests
             Assert.True(result > 0);
 
             //Forma 2
-            result.Count().Should().BeGraterThan(0);
+            //result.Count().Should().BeGraterThan(0);
         }
 
         [Fact(DisplayName = "[CustomerRepositoryTests] Insert")]
