@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FEB54663
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories.Tests", "Cibertec.Repositories.Tests\Cibertec.Repositories.Tests.csproj", "{C92FD7B5-3D8F-4508-8132-D84C32093CCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Web.Tests", "Cibertec.Web.Tests\Cibertec.Web.Tests.csproj", "{FFF5F307-9DC8-4556-AA8D-4A147BC95EBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.MockData", "Cibertec.MockData\Cibertec.MockData.csproj", "{90DC1C30-08F5-4D5E-AC11-AFAB1AC911FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,14 @@ Global
 		{C92FD7B5-3D8F-4508-8132-D84C32093CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C92FD7B5-3D8F-4508-8132-D84C32093CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C92FD7B5-3D8F-4508-8132-D84C32093CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFF5F307-9DC8-4556-AA8D-4A147BC95EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFF5F307-9DC8-4556-AA8D-4A147BC95EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFF5F307-9DC8-4556-AA8D-4A147BC95EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFF5F307-9DC8-4556-AA8D-4A147BC95EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90DC1C30-08F5-4D5E-AC11-AFAB1AC911FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90DC1C30-08F5-4D5E-AC11-AFAB1AC911FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90DC1C30-08F5-4D5E-AC11-AFAB1AC911FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90DC1C30-08F5-4D5E-AC11-AFAB1AC911FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +64,7 @@ Global
 		{DE9A26DD-1C71-4184-92C0-6DE601AF77A2} = {AD5096CC-0D2E-4E4A-85C1-A8636E930485}
 		{43CFCD87-6177-4FA7-9213-0034FF7D36F6} = {AD5096CC-0D2E-4E4A-85C1-A8636E930485}
 		{C92FD7B5-3D8F-4508-8132-D84C32093CCA} = {FEB54663-ED4C-464A-839F-5C88A441E90E}
+		{FFF5F307-9DC8-4556-AA8D-4A147BC95EBF} = {FEB54663-ED4C-464A-839F-5C88A441E90E}
+		{90DC1C30-08F5-4D5E-AC11-AFAB1AC911FA} = {FEB54663-ED4C-464A-839F-5C88A441E90E}
 	EndGlobalSection
 EndGlobal

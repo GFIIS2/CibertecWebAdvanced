@@ -24,7 +24,7 @@ namespace Cibertec.Web.Controllers
         }
         public IActionResult Detail()
         {
-            var customers = _unit.Customers.SearchByNames("Maria","Anders");
+            var customers = _unit.Customers.SearchByNames("Gustavo", "Yauri");
             return View(customers);
         }
     }

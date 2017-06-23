@@ -1,10 +1,10 @@
-﻿using Cibertec.Models;
+using Cibertec.Models;
 using Cibertec.UnitOfWork;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Cibertec.Repositories.Tests
+namespace Cibertec.MockData
 {
     public class MockedUnitOfWork
     {
@@ -13,7 +13,7 @@ namespace Cibertec.Repositories.Tests
             Mock<IUnitOfWork> unit = new Mock<IUnitOfWork>();
             unit.ConfigureCustomer();
             return unit.Object;
-        }        
+        }
     }
 
     public static class MockedUnitOfWorkExtensions

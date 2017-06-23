@@ -1,10 +1,8 @@
-﻿using Cibertec.Models;
+﻿using Cibertec.MockData;
+using Cibertec.Models;
 using Cibertec.UnitOfWork;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xunit;
 
 
@@ -104,7 +102,7 @@ namespace Cibertec.Repositories.Tests
         [Theory(DisplayName = "Display Search By Names Test")]
         [InlineData("Gustavo", "Yauri")]
         [InlineData("Julio", "Velarde")]
-        [InlineData("Alan", "Garcia")]
+        //[InlineData("Alan", "Garcia")]
         public void Customer_SearchByName(string firstName, string lastName)
         {
             var customer = _unit.Customers.SearchByNames(firstName, lastName);
