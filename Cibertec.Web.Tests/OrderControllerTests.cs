@@ -19,7 +19,7 @@ namespace Cibertec.Web.Tests
 
             //caso 2
 
-            _order = new OrderController(MockedUnitOfWork.GetUnitOfWork());
+            _order = new OrderController(MockedUnitOfWork.GetUnitOfWork().Object);
         }
 
         [Fact(DisplayName = "OrderControler Index Test")]

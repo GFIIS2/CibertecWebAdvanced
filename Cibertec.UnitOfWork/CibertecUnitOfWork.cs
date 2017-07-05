@@ -17,6 +17,7 @@ namespace Cibertec.UnitOfWork
             Suppliers = new SupplierRepository(connectionString);
             Orders = new OrderRepository(connectionString);
             OrderItems = new OrderItemRepository(connectionString);
+            Users = new UserRepository(connectionString);
             //Customers = new Repository<Customer>(connectionString);
             //Products = new RepositoryDapper<Product>(connectionString);
             //Suppliers = new RepositoryDapper<Supplier>(connectionString);
@@ -29,6 +30,7 @@ namespace Cibertec.UnitOfWork
         public ISupplierRepository Suppliers { get; private set; }
         public IOrderRepository Orders { get; private set; }
         public IOrderItemRepository OrderItems { get; private set; }
+        public IUserRepository Users { get; private set; }
         //public IRepository<Customer> Customers { get; private set; }
         //public IRepository<Product> Products { get; private set; }
         //public IRepository<Supplier> Suppliers { get; private set; }

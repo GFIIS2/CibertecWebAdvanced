@@ -2,17 +2,15 @@
 
 namespace Cibertec.Automation
 {
-    public static class SimpleTest
+    public class SimpleTest
     {
-        public static void Navigate()
+        public void Navigate()
         {
-            //NOTA: La URL inicia con HTTP://
             var driver = new ChromeDriver();
-            //driver.Navigate().GoToUrl("http://www.google.com.pe");
-            driver.Navigate().GoToUrl("http://localhost:5000/Customer"); 
-
-            //NOTA: Con este comando cierro sino lo dejo abierto
-            //driver.Close();
+            driver.Navigate().GoToUrl("http://www.google.com");
+            driver.Close();
+            driver.Quit();
+            driver = null;
         }
     }
 }

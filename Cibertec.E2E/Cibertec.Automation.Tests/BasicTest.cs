@@ -7,9 +7,10 @@ namespace Cibertec.Automation.Tests
     public class BasicTest
     {
         [Fact]
-        public void Navigate_To_Google()
+        public void GoToGoogle()
         {
-            SimpleTest.Navigate();
+            var test = new SimpleTest();
+            test.Navigate();
         }
     }
 }

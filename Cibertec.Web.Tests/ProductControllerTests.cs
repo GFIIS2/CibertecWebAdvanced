@@ -19,7 +19,7 @@ namespace Cibertec.Web.Tests
 
             //caso 2
 
-            _productos = new ProductController(MockedUnitOfWork.GetUnitOfWork());
+            _productos = new ProductController(MockedUnitOfWork.GetUnitOfWork().Object);
         }
 
         [Fact(DisplayName = "ProductControler Index Test")]

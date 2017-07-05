@@ -6,13 +6,20 @@ using System.Linq;
 
 namespace Cibertec.MockData
 {
-    public class MockedUnitOfWork
+    public static class MockedUnitOfWork
     {
-        public static IUnitOfWork GetUnitOfWork()
+        //public static IUnitOfWork GetUnitOfWork()
+        //{
+        //    Mock<IUnitOfWork> unit = new Mock<IUnitOfWork>();
+        //    unit.ConfigureCustomer();
+        //    return unit.Object;
+        //}
+
+        public static Mock<IUnitOfWork> GetUnitOfWork()
         {
             Mock<IUnitOfWork> unit = new Mock<IUnitOfWork>();
             unit.ConfigureCustomer();
-            return unit.Object;
+            return unit;
         }
     }
 

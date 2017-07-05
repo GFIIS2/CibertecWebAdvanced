@@ -19,7 +19,7 @@ namespace Cibertec.Web.Tests
             //_unit = new CibertecUnitOfWork(ConfigSettings.ConnectionString);
 
             //caso 2
-            _supplier = new SupplierController(MockedUnitOfWork.GetUnitOfWork());
+            _supplier = new SupplierController(MockedUnitOfWork.GetUnitOfWork().Object);
         }
 
         [Fact(DisplayName = "SupplierControler Index Test")]
