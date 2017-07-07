@@ -19,6 +19,7 @@ namespace Cibertec.MockData
         {
             Mock<IUnitOfWork> unit = new Mock<IUnitOfWork>();
             unit.ConfigureCustomer();
+            unit.ConfigureProduct();
             return unit;
         }
     }
@@ -76,6 +77,54 @@ namespace Cibertec.MockData
                 .Returns((int id) =>
                 {
                     return customerList.FirstOrDefault(x => x.Id == id);
+                });
+            return mock;
+        }
+        public static Mock<IUnitOfWork> ConfigureProduct(this Mock<IUnitOfWork> mock)
+        {
+            var productList = new List<Product>
+                {
+                    new Product
+                    {
+                        Id = 1,
+                        ProductName = "PC",
+                        SupplierId = 1,
+                        UnitPrice = 15.25M,
+                        Package = "Tecnologia",
+                        IsDiscontinued = false
+                    },
+                    new Product
+                    {
+                        Id = 2,
+                        ProductName = "LAPTOP",
+                        SupplierId = 1,
+                        UnitPrice = 165.25M,
+                        Package = "Tecnologia",
+                        IsDiscontinued = false
+                    },
+                    new Product
+                    {
+                        Id = 3,
+                        ProductName = "MOUSE",
+                        SupplierId = 1,
+                        UnitPrice = 55.25M,
+                        Package = "Tecnologia",
+                        IsDiscontinued = false
+                    }
+                };
+            mock.Setup(c => c.Products.GetAll()).Returns(productList);
+            mock.Setup(c => c.Products.Insert(It.IsAny<Product>())).Returns(1);
+            mock.Setup(c => c.Products.Update(It.IsAny<Product>())).Returns(true);
+            mock.Setup(c => c.Products.Delete(It.IsAny<Product>())).Returns(true);
+            mock.Setup(c => c.Products.SearchByNames(It.IsAny<string>()))
+                .Returns((string productName) =>
+                {
+                    return productList.FirstOrDefault(x => x.ProductName == productName);
+                });
+            mock.Setup(c => c.Products.GetById(It.IsAny<int>()))
+                .Returns((int id) =>
+                {
+                    return productList.FirstOrDefault(x => x.Id == id);
                 });
             return mock;
         }

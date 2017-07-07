@@ -6,13 +6,12 @@ using System.Linq;
 using Xunit;
 
 
-
 namespace Cibertec.Repositories.Tests
 {
-    public class CustomerRepositoryTests
+    public class ProductRepositoryTests
     {
         private readonly IUnitOfWork _unit;
-        public CustomerRepositoryTests()
+        public ProductRepositoryTests()
         {
             //caso 1
             //_unit = new CibertecUnitOfWork(ConfigSettings.ConnectionString);
@@ -24,12 +23,12 @@ namespace Cibertec.Repositories.Tests
         [Fact(DisplayName = "First Unit Test")]
         public void First_Unit_Test()
         {
-            var customerList = _unit.Customers.GetById(1);
-            customerList.Should().NotBeNull() ;
+            var productList = _unit.Products.GetById(1);
+            productList.Should().NotBeNull();
         }
 
-        [Fact(DisplayName = "[CustomerRepositoryTests] Get All Customers")]
-        public void Customers_Get_All()
+        [Fact(DisplayName = "Product Get All Test")]
+        public void Products_Get_All()
         {
             //Forma 1
             //var customerList = _unit.Customers.GetAll().ToList();
@@ -37,15 +36,15 @@ namespace Cibertec.Repositories.Tests
             //Assert.True(result.customerList() > 0);
 
             //Forma 2
-            var customerList = _unit.Customers.GetAll().ToList();
-            customerList.Count.Should().BeGreaterThan(0);
-            customerList.Count.Should().Be(3);
+            var productList = _unit.Products.GetAll().ToList();
+            productList.Count.Should().BeGreaterThan(0);
+            productList.Count.Should().Be(3);
         }
 
-        [Fact(DisplayName = "Customer GetById Test")]
+        [Fact(DisplayName = "Product GetById Test")]
         public void Get_By_Id()
         {
-            var result = _unit.Customers.GetById(1);
+            var result = _unit.Products.GetById(1);
             //forma 1
             Assert.NotNull(result);
             Assert.True(result.Id > 0);
@@ -54,10 +53,10 @@ namespace Cibertec.Repositories.Tests
             //result.Should().BeGreaterThan(0);
         }
 
-        [Fact(DisplayName = "Customer Insert Test")]
-        public void Insert_Customer()
+        [Fact(DisplayName = "Product Insert Test")]
+        public void Insert_Product()
         {
-            var result = _unit.Customers.Insert(new Customer());
+            var result = _unit.Products.Insert(new Product());
             //Forma 1
             //Assert.True(result > 0);
 
@@ -65,10 +64,10 @@ namespace Cibertec.Repositories.Tests
             result.Should().BeGreaterThan(0);
         }
 
-        [Fact(DisplayName = "Customer Insert Wrong")]
-        public void Insert_Customer_Wrong()
+        [Fact(DisplayName = "Product Insert Wrong")]
+        public void Insert_Product_Wrong()
         {
-            var result = _unit.Customers.Insert(new Customer());
+            var result = _unit.Products.Insert(new Product());
             //Forma 1
             Assert.True(result > 0);
 
@@ -76,10 +75,10 @@ namespace Cibertec.Repositories.Tests
             //result.Should().Be(0);
         }
 
-        [Fact(DisplayName = "Customer Update Test")]
-        public void Customer_Update()
+        [Fact(DisplayName = "Product Update Test")]
+        public void Product_Update()
         {
-            var result = _unit.Customers.Update(new Customer());
+            var result = _unit.Products.Update(new Product());
             //Forma 1
             //Assert.True(result);
 
@@ -87,10 +86,10 @@ namespace Cibertec.Repositories.Tests
             result.Should().BeTrue();
         }
 
-        [Fact(DisplayName = "Customer Delete Test")]
-        public void Customer_Delete()
+        [Fact(DisplayName = "Product Delete Test")]
+        public void Product_Delete()
         {
-            var result = _unit.Customers.Delete(new Customer());
+            var result = _unit.Products.Delete(new Product());
             //forma 1
             //Assert.True(result);
 
@@ -99,13 +98,13 @@ namespace Cibertec.Repositories.Tests
         }
 
 
-        [Theory(DisplayName = "Display Search By Names Test")]
+        [Theory(DisplayName = "Product Search By Product Name Test")]
         [InlineData("Gustavo", "Yauri")]
         [InlineData("Julio", "Velarde")]
         //[InlineData("Alan", "Garcia")]
-        public void Customer_SearchByName(string firstName, string lastName)
+        public void Product_SearchByName(string productName)
         {
-            var customer = _unit.Customers.SearchByNames(firstName, lastName);
+            var customer = _unit.Products.SearchByNames(productName);
             customer.Should().NotBeNull();
         }
     }
