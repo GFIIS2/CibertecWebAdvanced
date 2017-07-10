@@ -5,8 +5,6 @@ using FluentAssertions;
 using System.Linq;
 using Xunit;
 
-
-
 namespace Cibertec.Repositories.Tests
 {
     public class CustomerRepositoryTests

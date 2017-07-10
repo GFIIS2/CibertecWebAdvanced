@@ -20,6 +20,7 @@ namespace Cibertec.MockData
             Mock<IUnitOfWork> unit = new Mock<IUnitOfWork>();
             unit.ConfigureCustomer();
             unit.ConfigureProduct();
+            unit.ConfigureSupplier();
             return unit;
         }
     }
@@ -91,7 +92,7 @@ namespace Cibertec.MockData
                         SupplierId = 1,
                         UnitPrice = 15.25M,
                         Package = "Tecnologia",
-                        IsDiscontinued = false
+                        IsDiscontinued = false,
                     },
                     new Product
                     {
@@ -125,6 +126,61 @@ namespace Cibertec.MockData
                 .Returns((int id) =>
                 {
                     return productList.FirstOrDefault(x => x.Id == id);
+                });
+            return mock;
+        }
+
+        public static Mock<IUnitOfWork> ConfigureSupplier(this Mock<IUnitOfWork> mock)
+        {
+            var supplierList = new List<Supplier>
+                {
+                    new Supplier
+                    {
+                        Id = 1,
+                        ContactName = "PC",
+                        ContactTitle = "1",
+                        City = "Lima",
+                        Country = "Peru",
+                        CompanyName = "BF",
+                        Fax = "102",
+                        Phone="123"
+                    },
+                    new Supplier
+                    {
+                        Id = 2,
+                        ContactName = "PC",
+                        ContactTitle = "1",
+                        City = "Lima",
+                        Country = "Peru",
+                        CompanyName = "BF",
+                        Fax = "102",
+                        Phone="123"
+                    },
+                    new Supplier
+                    {
+                        Id = 3,
+                        ContactName = "PC",
+                        ContactTitle = "1",
+                        City = "Lima",
+                        Country = "Peru",
+                        CompanyName = "BF",
+                        Fax = "102",
+                        Phone="123"
+                    }
+                };
+            mock.Setup(c => c.Suppliers.GetAll()).Returns(supplierList);
+            mock.Setup(c => c.Suppliers.Insert(It.IsAny<Supplier>())).Returns(1);
+            mock.Setup(c => c.Suppliers.Update(It.IsAny<Supplier>())).Returns(true);
+            mock.Setup(c => c.Suppliers.Delete(It.IsAny<Supplier>())).Returns(true);
+            mock.Setup(c => c.Suppliers.SearchByNames(It.IsAny<string>()))
+                .Returns((string contactName) =>
+                {
+                    return supplierList.FirstOrDefault(x => x.ContactName == contactName);
+                });
+            mock.Setup(c => c.Suppliers.GetById(It.IsAny<int>()))
+                .Returns((int id) =>
+                {
+                    return supplierList.FirstOrDefault(x => x.Id == id);
                 });
             return mock;
         }

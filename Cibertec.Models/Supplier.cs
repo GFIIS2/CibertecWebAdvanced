@@ -13,6 +13,6 @@ namespace Cibertec.Models
         public string Phone { get; set; }
         public string Fax { get; set; }
 
-        public virtual IEnumerable<Product> Products { get; set; }
+        //public virtual IEnumerable<Product> Products { get; set; }
     }
 }
