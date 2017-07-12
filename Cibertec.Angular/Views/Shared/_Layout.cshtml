@@ -6,13 +6,11 @@
     <title>Cibertec.Angular</title>
     <environment names="Development">
         <link href="~/libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet" /> <link rel="stylesheet" href="~/css/site.css" />
-        <script src="~/libraries/angular/angular.js"></script>
-        <script src="~/libraries/angular/angular-ui-router.js"></script>
-        <script src="~/libraries/jquery/jquery.js"></script>
-        <script src="~/libraries/bootstrap/js/bootstrap.min.js"></script>
+        
     </environment>
 </head>
-<body>
+<body ng-controller="applicationController as vm"
+      ng-init="init('@ViewBag.WebApiUrl')">
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -27,6 +25,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a ng-if="!vm.validate()" ui-sref="login" ui-sref-active="active">Login</a></li>
+                    <li><a ng-if="vm.validate()" ng-click="vm.logout()" href="#" ui-sref-active="active">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -39,7 +39,26 @@
             Cibertec Perú S.A.C – Visual Studio 2015 Developer – C# 7
         </footer>
     </div>
+
+    <script src="~/libraries/angular/angular.js"></script>
+    <script src="~/libraries/angular/angular-ui-router.js"></script>
+    <script src="~/libraries/angular/angular-local-storage.js"></script>
+    <script src="~/libraries/angular/angular-animate.js"></script>
+
+    <script src="~/libraries/jquery/jquery.js"></script>
+    <script src="~/libraries/bootstrap/js/bootstrap.min.js"></script>
+
     <script src="~/app/app.js"></script>
     <script src="~/app/app.routes.js"></script>
+    <script src="~/app/app.config.js"></script>
+    <script src="~/app/app.controller.js"></script>
+
+    <script src="~/app/shared/data.service.js"></script>
+    <script src="~/app/shared/authentication.service.js"></script>
+    <script src="~/app/shared/settings.service.js"></script>
+
+    <script src="~/app/public/login/login.controller.js"></script>
+
+
 </body>
 </html>

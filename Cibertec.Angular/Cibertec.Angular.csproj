@@ -9,11 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\app.js" />
+    <Content Include="wwwroot\app\app.config.js" />
+    <Content Include="wwwroot\app\app.controller.js" />
     <Content Include="wwwroot\app\app.js" />
     <Content Include="wwwroot\app\app.routes.js" />
     <Content Include="wwwroot\app\home.html" />
     <Content Include="wwwroot\app\login.html" />
+    <Content Include="wwwroot\app\public\login\index.html" />
+    <Content Include="wwwroot\app\public\login\login.controller.js" />
+    <Content Include="wwwroot\app\shared\authentication.service.js" />
+    <Content Include="wwwroot\app\shared\data.service.js" />
+    <Content Include="wwwroot\app\shared\data.services.js" />
+    <Content Include="wwwroot\app\shared\settings.service.js" />
     <Content Include="wwwroot\libraries\angular\angular-ui-router.js" />
     <Content Include="wwwroot\libraries\angular\angular.js" />
     <Content Include="wwwroot\libraries\angular\angular.min.js" />
@@ -35,7 +42,6 @@
     <Content Include="wwwroot\libraries\bootstrap\js\bootstrap.min.js" />
     <Content Include="wwwroot\libraries\bootstrap\js\npm.js" />
     <Content Include="wwwroot\libraries\jquery\jquery.js" />
-    <Content Include="wwwroot\libraries\jquery\jquery-3.2.1.min.js" />
     <Content Include="wwwroot\libraries\jquery\jquery.min.js" />
   </ItemGroup>
   <ItemGroup>
