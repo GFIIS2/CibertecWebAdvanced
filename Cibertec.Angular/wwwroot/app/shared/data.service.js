@@ -2,6 +2,7 @@
     angular
         .module('app')
         .factory('dataService', dataService);
+
     dataService.$inject = ['$http'];
 
     function dataService($http) {
@@ -16,15 +17,14 @@
         function getData(url) {
             return $http.get(url);
         }
-        function postData(url,data) {
+        function postData(url, data) {
             return $http.post(url, data);
         }
         function putData(url, data) {
             return $http.put(url, data);
         }
-        function deleteData(url, data) {
-            return $http.delete(url, data);
+        function deleteData(url) {
+            return $http.delete(url);
         }
     }
-}  
-)();
+})();

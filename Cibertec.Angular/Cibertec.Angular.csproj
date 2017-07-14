@@ -14,12 +14,14 @@
     <Content Include="wwwroot\app\app.js" />
     <Content Include="wwwroot\app\app.routes.js" />
     <Content Include="wwwroot\app\home.html" />
-    <Content Include="wwwroot\app\login.html" />
+    <Content Include="wwwroot\app\private\product\directives\product-card\product-card.html" />
+    <Content Include="wwwroot\app\private\product\directives\product-card\product-card.js" />
+    <Content Include="wwwroot\app\private\product\index.html" />
+    <Content Include="wwwroot\app\private\product\product.controller.js" />
     <Content Include="wwwroot\app\public\login\index.html" />
     <Content Include="wwwroot\app\public\login\login.controller.js" />
     <Content Include="wwwroot\app\shared\authentication.service.js" />
     <Content Include="wwwroot\app\shared\data.service.js" />
-    <Content Include="wwwroot\app\shared\data.services.js" />
     <Content Include="wwwroot\app\shared\settings.service.js" />
     <Content Include="wwwroot\libraries\angular\angular-ui-router.js" />
     <Content Include="wwwroot\libraries\angular\angular.js" />
@@ -54,6 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cibertec.Models\Cibertec.Models.csproj" />
+    <ProjectReference Include="..\Cibertec.Repositories\Cibertec.Repositories.csproj" />
+    <ProjectReference Include="..\Cibertec.UnitOfWork\Cibertec.UnitOfWork.csproj" />
   </ItemGroup>
 
 </Project>

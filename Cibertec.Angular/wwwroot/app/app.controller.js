@@ -3,7 +3,7 @@
     angular.module('app').controller('applicationController', applicationController);
 
     applicationController.$inject = ['$scope', 'configService', 'authenticationService', 'localStorageService'];
-        
+
     function applicationController($scope, configService, authenticationService, localStorageService) {
         var vm = this;
         vm.validate = validate;
@@ -20,6 +20,7 @@
         function logout() {
             authenticationService.logout();
         }
+
     }
-}
-)();
+
+})();

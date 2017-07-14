@@ -1,0 +1,10 @@
+﻿<div ng-controller="productController as vm">
+    <product-card ng-repeat="product in vm.productList"
+                  id="{{::product.id}}"
+                  product-name="{{::product.productName}}"
+                  supplier-id="{{::product.supplierId}}"
+                  unit-price="{{::product.unitPrice}}"
+                  package="{{::product.package}}"
+                  is-discontinued="product.isDiscontinued">
+    </product-card>    
+</div>
