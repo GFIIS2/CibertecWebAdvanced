@@ -4,7 +4,6 @@
     angular.module('app',
         [
             'ui.router',
-            'LocalStorageModule',
-            'ngAnimate'
+            'LocalStorageModule'            
         ]);
 })();

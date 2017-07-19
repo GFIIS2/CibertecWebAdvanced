@@ -13,9 +13,13 @@
     <Content Include="wwwroot\app\app.controller.js" />
     <Content Include="wwwroot\app\app.js" />
     <Content Include="wwwroot\app\app.routes.js" />
+    <Content Include="wwwroot\app\components\modal\modal-directive.html" />
+    <Content Include="wwwroot\app\components\modal\modal.directive.js" />
     <Content Include="wwwroot\app\home.html" />
     <Content Include="wwwroot\app\private\product\directives\product-card\product-card.html" />
     <Content Include="wwwroot\app\private\product\directives\product-card\product-card.js" />
+    <Content Include="wwwroot\app\private\product\directives\product-form\product-form.html" />
+    <Content Include="wwwroot\app\private\product\directives\product-form\product-form.js" />
     <Content Include="wwwroot\app\private\product\index.html" />
     <Content Include="wwwroot\app\private\product\product.controller.js" />
     <Content Include="wwwroot\app\public\login\index.html" />
@@ -47,6 +51,7 @@
     <Content Include="wwwroot\libraries\jquery\jquery.min.js" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="2.4.337" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />

@@ -21,15 +21,45 @@ namespace Cibertec.WebApi.Controllers
         //}
 
         [HttpGet]
-        public IActionResult List()
+        [Route("")]
+        public IActionResult GetList()
         {
             return Ok(_unit.Products.GetAll());
         }
 
-        [HttpPost]
-        public IActionResult Create([FromBody] Product product)
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult Get(int id)
         {
-            return Ok(_unit.Products.Insert(product));
+            if (id <= 0) return BadRequest();
+            return Ok(_unit.Products.GetById(id));
         }
+                
+        [HttpPost]
+        public IActionResult Post([FromBody]Product product)
+        {   
+            var id = _unit.Products.Insert(product);
+            return Ok(new
+            {
+                id = id
+            });
+        }
+                
+        [HttpPut]
+        public IActionResult Put([FromBody]Product customer)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            if (!_unit.Products.Update(customer)) return BadRequest("Incorrect id");
+            return Ok(new { status = true });
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult Delete(int id)
+        {
+            if (id <= 0) return BadRequest();
+            var result = _unit.Products.Delete(new Product { Id = id });
+            return Ok(new { delete = true });
+        }        
     }
 }
