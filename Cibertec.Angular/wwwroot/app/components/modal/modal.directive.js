@@ -1,6 +1,6 @@
 ﻿(function () {
     angular.module('app')
-        .directive('modalPanel', modalPanel);
+    .directive('modalPanel', modalPanel);
 
     function modalPanel() {
         return {
@@ -13,8 +13,8 @@
                 saveFunction: '=',
                 closeFunction: '=',
                 readOnly: '=',
-                isDelete: '='
-            }        
+                isDelete:'='
+            }
         };
     }
 })();

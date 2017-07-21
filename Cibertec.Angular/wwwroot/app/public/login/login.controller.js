@@ -1,10 +1,9 @@
 ﻿(function () {
     'use strict';
     angular.module('app')
-        .controller('loginController', loginController);
+    .controller('loginController', loginController);
 
     loginController.$inject = ['$http', 'authenticationService', 'configService', '$state'];
-       
 
     function loginController($http, authenticationService, configService, $state) {
         var vm = this;
@@ -21,15 +20,12 @@
         }
 
         function login() {
-            authenticationService.login(vm.user).then(
-                function (result) {
-                    vm.showError = false;
-                    $state.go("home");
-                }, function (error) {
-                    vm.showError = true;
-                }
-            );
+            authenticationService.login(vm.user).then(function (result) {
+                vm.showError = false;
+                $state.go("home");
+            }, function (error) {
+                vm.showError = true;
+            });               
         }
     }
-}
-)();
+})();

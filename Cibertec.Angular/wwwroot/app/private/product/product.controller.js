@@ -5,7 +5,6 @@
 
     productController.$inject = ['dataService', 'configService', '$state'];
 
-
     function productController(dataService, configService, $state) {
         var apiUrl = configService.getApiUrl();
         var vm = this;

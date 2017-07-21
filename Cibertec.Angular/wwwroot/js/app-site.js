@@ -4,7 +4,7 @@
     angular.module('app',
         [
             'ui.router',
-            'LocalStorageModule'            
+            'LocalStorageModule'
         ]);
 })();
 (function () {
@@ -21,13 +21,17 @@
                 url: "/home",
                 templateUrl: 'app/home.html'
             })
-            .state("login", {
-                url: "/login",
-                templateUrl: 'app/public/login/index.html'
+            .state("supplier", {
+                url: "/supplier",
+                templateUrl: 'app/private/supplier/index.html'
             })
             .state("product", {
                 url: "/product",
                 templateUrl: 'app/private/product/index.html'
+            })
+            .state("login", {
+                url: "/login",
+                templateUrl: 'app/public/login/index.html'
             })
             .state("otherwise", {
                 url: '/',
@@ -54,9 +58,9 @@
     'use strict';
     angular.module('app').controller('applicationController', applicationController);
 
-    applicationController.$inject = ['$scope', 'configService', 'authenticationService', 'localStorageService'];
+    applicationController.$inject = ['$scope', 'configService', 'authenticationService', '$state'];
 
-    function applicationController($scope, configService, authenticationService, localStorageService) {
+    function applicationController($scope, configService, authenticationService, $state) {
         var vm = this;
         vm.validate = validate;
         vm.logout = logout;
@@ -71,6 +75,7 @@
 
         function logout() {
             authenticationService.logout();
+            $state.go('login');
         }
 
     }
