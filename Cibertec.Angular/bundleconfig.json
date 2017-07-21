@@ -13,7 +13,8 @@
     "inputFiles": [
       "wwwroot/libraries/angular/angular.js",
       "wwwroot/libraries/angular/angular-ui-router.js",
-      "wwwroot/libraries/angular/angular-local-storage.js"
+      "wwwroot/libraries/angular/angular-local-storage.js",
+      "wwwroot/libraries/angular/ui-bootstrap.js"
     ],
     // Optionally specify minification options
     "minify": {

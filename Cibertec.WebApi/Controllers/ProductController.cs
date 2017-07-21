@@ -28,6 +28,24 @@ namespace Cibertec.WebApi.Controllers
         }
 
         [HttpGet]
+        [Route("count")]
+        public IActionResult GetCount()
+        {
+            return Ok(_unit.Products.RowNumbers());
+        }
+
+        [HttpGet]
+        [Route("list/{numberPage}/{numberRow}")]
+        public IActionResult GetListRange(int numberPage, int numberRow)
+        {
+            int startRow; int endRow;
+            startRow = ((numberPage - 1) * numberRow) + 1;
+            endRow = numberPage * numberRow;
+
+            return Ok(_unit.Products.SearchByRange(startRow,endRow));
+        }
+
+        [HttpGet]
         [Route("{id}")]
         public IActionResult Get(int id)
         {

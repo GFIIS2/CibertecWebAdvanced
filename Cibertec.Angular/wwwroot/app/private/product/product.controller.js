@@ -18,19 +18,62 @@
         vm.modalTitle = '';
         vm.showCreate = false;
 
+        vm.totalRecords = 0;
+        vm.currentPage = 1;
+        vm.maxSize = 10;
+        vm.itemsPerPage = 5;
+
         //Funciones
         vm.getProduct = getProduct;
         vm.create = create;
         vm.edit = edit;
         vm.delete = productDelete;
+        vm.pageChanged = pageChanged;
         //vm.closeModal = closeModal;
 
         init();
 
         function init() {
             if (!configService.getLogin()) return $state.go('login');
-            list();
+            //list();
+            configurePagination();
         }
+
+        function configurePagination() {
+            //In case mobile just show 5 pages
+            var widthScreen = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+            if (widthScreen < 420) vm.maxSize = 5;
+            totalRecords();
+        }
+
+        function pageChanged() {
+            getPageRecords(vm.currentPage);
+        }
+
+        function totalRecords() {
+            dataService.getData(apiUrl + '/product/count')
+                .then(function (result)
+                {
+                    vm.totalRecords = result.data;
+                    getPageRecords(vm.currentPage);
+                }
+                , function (error) {
+                    console.log(error);
+                })
+        }
+
+        function getPageRecords(page) {
+            dataService.getData(apiUrl + '/product/list/' + page + '/' + vm.itemsPerPage)
+                .then(function (result) {
+                    vm.productList = result.data;
+                },
+                function (error) {
+                    vm.productList = [];
+                    console.log(error);
+                })
+        }
+
+
 
         function list() {
             dataService.getData(apiUrl + '/product')
@@ -74,8 +117,11 @@
             dataService.postData(apiUrl + '/product', vm.product)
                 .then(function (result) {
                     getProduct(result.data.id);
-                    list();
-                    vm.showCreate = true;
+                    //list();  
+                    vm.currentPage = 1;
+                    totalRecords();
+                    //getPageRecords(vm.currentPage);
+                    vm.showCreate = true;                    
                 },
                 function (error) {                    
                     console.log(error);

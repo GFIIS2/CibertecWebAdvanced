@@ -3,7 +3,8 @@
 
     angular.module('app',
         [
-            'ui.router',
-            'LocalStorageModule'
+            'ui.router',            
+            'LocalStorageModule',
+            'ui.bootstrap'
         ]);
 })();

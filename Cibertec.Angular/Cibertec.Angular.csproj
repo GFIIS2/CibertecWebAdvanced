@@ -31,6 +31,7 @@
     <Content Include="wwwroot\libraries\angular\angular.js" />
     <Content Include="wwwroot\libraries\angular\angular.min.js" />
     <Content Include="wwwroot\libraries\angular\angular.min.js.map" />
+    <Content Include="wwwroot\libraries\angular\ui-bootstrap.js" />
     <Content Include="wwwroot\libraries\bootstrap\css\bootstrap-theme.css" />
     <Content Include="wwwroot\libraries\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="wwwroot\libraries\bootstrap\css\bootstrap-theme.min.css" />
