@@ -104,7 +104,7 @@ namespace Cibertec.Repositories.Tests
         //[InlineData("Alan", "Garcia")]
         public void Product_SearchByName(string productName)
         {
-            var customer = _unit.Products.SearchByNames(productName);
+            var customer = _unit.Products.GetByProductName(productName);
             customer.Should().NotBeNull();
         }
     }

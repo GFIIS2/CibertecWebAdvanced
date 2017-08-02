@@ -5,19 +5,21 @@ namespace Cibertec.Automation.Tests
 {
     public class CustomerPageTests
     {
-        private readonly CustomerPage _page;
+        private readonly CustomerPage _customerPage;
+
         public CustomerPageTests()
         {
             Driver.GetInstance();
-            _page = new CustomerPage();
+            _customerPage = new CustomerPage();
         }
 
         [Fact]
-        private void Test_Index()
+        public void Customer_List_Automation()
         {
-            _page.Go();
-            _page.GotToIndex();
-            _page.GetList().Should().BeGreaterThan(90);
+            _customerPage.GoToUrl();
+            _customerPage.GoToIndex();
+            _customerPage.GetListCount().Should().BeGreaterThan(90);
+
             Driver.CloseInstance();
         }
     }

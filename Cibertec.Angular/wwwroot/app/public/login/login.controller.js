@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
-    angular.module('app')
-    .controller('loginController', loginController);
+
+    angular.module('app').controller('loginController', loginController);
 
     loginController.$inject = ['$http', 'authenticationService', 'configService', '$state'];
 
@@ -10,7 +10,6 @@
         vm.user = {};
         vm.title = 'Login';
         vm.login = login;
-        vm.showError = false;
 
         init();
 
@@ -25,7 +24,9 @@
                 $state.go("home");
             }, function (error) {
                 vm.showError = true;
-            });               
+            });
         }
+
     }
+
 })();

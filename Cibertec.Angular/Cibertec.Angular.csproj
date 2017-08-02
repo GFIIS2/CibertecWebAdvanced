@@ -27,6 +27,7 @@
     <Content Include="wwwroot\app\shared\authentication.service.js" />
     <Content Include="wwwroot\app\shared\data.service.js" />
     <Content Include="wwwroot\app\shared\settings.service.js" />
+    <Content Include="wwwroot\js\worker.js" />
     <Content Include="wwwroot\libraries\angular\angular-ui-router.js" />
     <Content Include="wwwroot\libraries\angular\angular.js" />
     <Content Include="wwwroot\libraries\angular\angular.min.js" />

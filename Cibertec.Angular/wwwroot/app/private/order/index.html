@@ -1,0 +1,10 @@
+﻿<div ng-controller="orderController as vm">
+    <order-card 
+                  ng-repeat="order in vm.orderList"
+                  id="{{::order.id}}"
+                  order-date ="{{::order.orderDate}}"
+                  order-number="{{::order.orderNumber}}"
+                  customer-id="{{::order.customerId}}"
+                  total-amount="{{::order.totalAmount}}">
+    </order-card>
+</div>

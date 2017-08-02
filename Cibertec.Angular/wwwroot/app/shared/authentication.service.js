@@ -16,27 +16,25 @@
             var defer = $q.defer();
             var url = configService.getApiUrl() + '/Token';
             var data = "username=" + user.userName + "&password=" + user.password;
-            $http.post(url,
-                       data,
-                       {
-                           headers: {
-                               'Content-Type': 'application/x-www-form-urlencoded'
-                           }
-                       })
-            .then(function (result) {
+
+            $http.post(url, data, {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            }).then(function (result) {
                 $http.defaults.headers.common.Authorization = 'Bearer ' + result.data.access_token;
-                localStorageService.set('userToken',
-                    {
-                        token: result.data.access_token,
-                        userName: user.userName
-                    });
+                localStorageService.set('userToken', {
+                    token: result.data.access_token,
+                    userName: user.userName
+                });
                 configService.setLogin(true);
                 defer.resolve(true);
-            },
-            function (error) {
-                defer.reject(false);
-            });
+                }, function error(response) {
+                    defer.reject(false);
+                });
+
             return defer.promise;
+
         }
 
         function logout() {

@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
-    angular.module('app')
-    .directive('productForm', productForm);
+
+    angular.module('app').directive('productForm', productForm);
 
     function productForm() {
         return {

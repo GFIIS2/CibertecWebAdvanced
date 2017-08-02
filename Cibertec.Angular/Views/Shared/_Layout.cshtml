@@ -1,36 +1,39 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
 <html ng-app="app">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cibertec.Angular</title>
+    <title>@ViewData["Title"] - Cibertec.Angular</title>
+
     <environment names="Development, Production">
         <link href="~/libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
+
 </head>
-<body ng-controller="applicationController as vm"
-      ng-init="init('@ViewBag.WebApiUrl')">
+<body ng-controller="applicationController as vm" ng-init="init('@ViewBag.WebApiUrl')">
+     
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a ui-sref="home" ui-sref-active="active" class="navbar-brand">Cibertec.Angular</a>
+                <a class="navbar-brand" href="#">Cibertec Angular</a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse">                
                 <ul class="nav navbar-nav">
                     <li><a ng-if="!vm.validate()" ui-sref="login" ui-sref-active="active">Login</a></li>
                     <li><a ng-if="vm.validate()" ng-click="vm.logout()" href="#" ui-sref-active="active">Logout</a></li>
-                    <li><a ng-if="vm.validate()" ui-sref="product" ui-sref-active="active">Product</a></li>
+                    <li><a ng-if="vm.validate()" ng-click="vm.product()" href="#" ui-sref-active="active">Product</a></li>
+                    <li><a ng-if="vm.validate()" ng-click="vm.order()" href="#" ui-sref-active="active">Order</a></li>
+                    <li><a ng-if="vm.validate()" ng-click="vm.orderItem()" href="#" ui-sref-active="active">Order Item</a></li>
+                    <li><a ng-if="vm.validate()" ng-click="vm.customer()" href="#" ui-sref-active="active">Customer</a></li>
+                    <li><a ng-if="vm.validate()" ng-click="vm.supplier()" href="#" ui-sref-active="active">Supplier</a></li>
+                    <li><a ng-if="vm.validate()" ng-click="vm.csv()" href="#" ui-sref-active="active">CSV</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -38,17 +41,14 @@
             <p>&copy; 2017 - Cibertec.Angular</p>
         </footer>
     </div>
-    <environment names="Development">
+
+    <environment names="Development, Production">
         <script src="~/js/bootstrap.js"></script>
         <script src="~/js/angular.js"></script>
         <script src="~/js/app-site.js"></script>
         <script src="~/js/app-cibertec.js"></script>
-    </environment>
-    <environment names="Production">
-        <script src="~/js/bootstrap.min.js"></script>
-        <script src="~/js/angular.min.js"></script>
-        <script src="~/js/app-site.min.js"></script>        
-        <script src="~/js/app-cibertec.min.js"></script>
-    </environment>
+        <script src="~/js/worker.js"></script>
+    </environment>       
+
 </body>
 </html>

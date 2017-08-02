@@ -11,7 +11,7 @@ namespace Cibertec.Repositories.Northwind.Dapper
         {
         }
         
-        public Product SearchByNames(string productName)
+        public Product GetByProductName(string productName)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -32,7 +32,7 @@ namespace Cibertec.Repositories.Northwind.Dapper
             }
         }
 
-        public IEnumerable<Product> SearchByRange(int startRow, int endRow)
+        public IEnumerable<Product> GetProductsByPagination(int startRow, int endRow)
         {
             using (var connection = new SqlConnection(_connectionString))
             {

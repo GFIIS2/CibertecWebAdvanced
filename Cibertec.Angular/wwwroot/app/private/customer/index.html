@@ -1,0 +1,11 @@
+﻿<div ng-controller="customerController as vm">
+    <customer-card 
+                  ng-repeat="customer in vm.customerList"
+                  id="{{::customer.id}}"
+                  first-name ="{{::customer.firstName}}"
+                  last-name="{{::customer.lastName}}"
+                  city="{{::customer.city}}"
+                  country="{{::customer.country}}"
+                  phone="{{::customer.phone}}">
+    </customer-card>
+</div>

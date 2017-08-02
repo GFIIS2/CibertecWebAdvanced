@@ -1,0 +1,20 @@
+﻿<div ng-controller="csvController as vm">
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>Upload Files</strong></div>
+            <div class="panel-body">
+                <h4>Select files from your computer</h4>
+                <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <input accept=".csv" type="file" id="csvViewer">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div>
+        <output id="content"></output>
+    </div>
+</div>

@@ -1,8 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('app')
-	.directive('productCard', productCard);
+    angular.module('app').directive('productCard', productCard);
 
     function productCard() {
         return {

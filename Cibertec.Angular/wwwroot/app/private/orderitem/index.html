@@ -1,0 +1,10 @@
+﻿<div ng-controller="orderitemController as vm">
+    <orderitem-card 
+                  ng-repeat="orderitem in vm.orderitemList"
+                  id="{{::orderitem.id}}"
+                  order-id ="{{::orderitem.orderId}}"
+                  product-id="{{::orderitem.productId}}"
+                  unit-price="{{::orderitem.unitPrice}}"
+                  quantity="{{::orderitem.quantity}}">
+    </orderitem-card>
+</div>

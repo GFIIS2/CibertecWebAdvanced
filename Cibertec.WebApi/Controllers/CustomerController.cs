@@ -21,13 +21,14 @@ namespace Cibertec.WebApi.Controllers
         //}
 
         [HttpGet]
+        [Route("list")]
         public IActionResult List()
         {
             return Ok(_unit.Customers.GetAll());
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Customer customer)
+        public IActionResult Create([FromBody]Customer customer)
         {
             return Ok(_unit.Customers.Insert(customer));
         }
