@@ -10,6 +10,7 @@
         vm.user = {};
         vm.title = 'Login';
         vm.login = login;
+        vm.showError = false;
 
         init();
 
