@@ -1,0 +1,24 @@
+{
+  "name": "Cibertec.Angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jasmine-core": "^2.7.0",
+    "angular-mocks": "^1.6.5",
+    "angular": "^1.6.5",
+    "karma": "^1.7.0",
+    "karma-jasmine": "^1.1.0",
+    "ui-router": "^1.0.0-alpha.3",
+    "karma-chrome-launcher": "^2.2.0"
+  },
+  "devDependencies": {
+    "karma": "^1.7.0",
+    "karma-spec-reporter": "0.0.31"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "author": "Cibertec",
+  "license": "ISC"
+}

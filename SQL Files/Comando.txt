@@ -1,0 +1,5 @@
+npm install karma karma-jasmine jasmine-core karma-chrome-launcher --save-dev
+
+npm install karma-spec-reporter --save-dev
+
+linea 40 del karma.conf.js cambiar progress a spec
