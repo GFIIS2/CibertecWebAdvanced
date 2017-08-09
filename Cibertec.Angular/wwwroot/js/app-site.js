@@ -19,39 +19,39 @@
         $stateProvider
             .state("home", {
                 url: '/home',
-                templateUrl: 'app/home.html'
+                templateUrl: './app/home.html'
             })
             .state("login", {
                 url: '/login',
-                templateUrl: 'app/public/login/index.html'
+                templateUrl: './app/public/login/index.html'
             })
             .state("product", {
                 url: "/product",
-                templateUrl: 'app/private/product/index.html'
+                templateUrl: './app/private/product/index.html'
             })
             .state("order", {
                 url: "/order",
-                templateUrl: 'app/private/order/index.html'
+                templateUrl: './app/private/order/index.html'
             })
             .state("orderitem", {
                 url: "/orderitem",
-                templateUrl: 'app/private/orderitem/index.html'
+                templateUrl: './app/private/orderitem/index.html'
             })
             .state("customer", {
                 url: "/customer",
-                templateUrl: 'app/private/customer/index.html'
+                templateUrl: './app/private/customer/index.html'
             })
             .state("supplier", {
                 url: "/supplier",
-                templateUrl: 'app/private/supplier/index.html'
+                templateUrl: './app/private/supplier/index.html'
             })
             .state("csv", {
                 url: "/csv-viewer",
-                templateUrl: 'app/private/csv-viewer/index.html'
+                templateUrl: './app/private/csv-viewer/index.html'
             })
             .state("otherwise", {
                 url: '*path',
-                templateUrl: 'app/home.html'
+                templateUrl: './app/home.html'
             });
     }
 
@@ -76,8 +76,28 @@
         if (user && user.token) {
             $http.defaults.headers.common.Authorization = 'Bearer ' + localStorageService.get('userToken').token;
             configService.setLogin(true);
-        } else $state.go('login');
 
+            startSignalR();
+        }
+        else $state.go('login');
+
+    }
+
+    function startSignalR() {
+        $.connection.hub.logging = true;
+        var notificationHubProxy = $.connection.notificationHub;
+        debugger;
+        notificationHubProxy.client.updateProduct = function (id) {
+            console.log(id);
+        };
+
+        $.connection.hub.start()
+            .done(function () {
+                console.log("Hub started - sucess.")
+            })
+            .fail(function (error) {
+                console.log(error)
+            });
     }
 
 })();
